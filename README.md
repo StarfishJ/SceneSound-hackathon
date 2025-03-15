@@ -58,7 +58,13 @@ npm install
 4. Install backend dependencies:
 ```bash
 cd python_service
-pip install flask flask-cors pillow python-dotenv requests torch torchvision
+# Install PyTorch first
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu  # For CPU version
+# OR
+# pip install torch torchvision  # For GPU version
+
+# Then install other dependencies
+pip install flask flask-cors pillow python-dotenv requests
 # Or use requirements.txt if available
 pip install -r requirements.txt
 ```
