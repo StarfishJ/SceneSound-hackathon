@@ -1,0 +1,76 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(() => {
+var exports = {};
+exports.id = "pages/api/spotify-token";
+exports.ids = ["pages/api/spotify-token"];
+exports.modules = {
+
+/***/ "next/dist/compiled/next-server/pages-api.runtime.dev.js":
+/*!**************************************************************************!*\
+  !*** external "next/dist/compiled/next-server/pages-api.runtime.dev.js" ***!
+  \**************************************************************************/
+/***/ ((module) => {
+
+module.exports = require("next/dist/compiled/next-server/pages-api.runtime.dev.js");
+
+/***/ }),
+
+/***/ "node-fetch":
+/*!*****************************!*\
+  !*** external "node-fetch" ***!
+  \*****************************/
+/***/ ((module) => {
+
+module.exports = require("node-fetch");
+
+/***/ }),
+
+/***/ "buffer":
+/*!*************************!*\
+  !*** external "buffer" ***!
+  \*************************/
+/***/ ((module) => {
+
+module.exports = require("buffer");
+
+/***/ }),
+
+/***/ "(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Fspotify-token&preferredRegion=&absolutePagePath=.%2Fpages%5Capi%5Cspotify-token.js&middlewareConfigBase64=e30%3D!":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Fspotify-token&preferredRegion=&absolutePagePath=.%2Fpages%5Capi%5Cspotify-token.js&middlewareConfigBase64=e30%3D! ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   config: () => (/* binding */ config),\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__),\n/* harmony export */   routeModule: () => (/* binding */ routeModule)\n/* harmony export */ });\n/* harmony import */ var next_dist_server_future_route_modules_pages_api_module_compiled__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/dist/server/future/route-modules/pages-api/module.compiled */ \"(api)/./node_modules/next/dist/server/future/route-modules/pages-api/module.compiled.js\");\n/* harmony import */ var next_dist_server_future_route_modules_pages_api_module_compiled__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_future_route_modules_pages_api_module_compiled__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/dist/server/future/route-kind */ \"(api)/./node_modules/next/dist/server/future/route-kind.js\");\n/* harmony import */ var next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/dist/build/templates/helpers */ \"(api)/./node_modules/next/dist/build/templates/helpers.js\");\n/* harmony import */ var _pages_api_spotify_token_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages\\api\\spotify-token.js */ \"(api)/./pages/api/spotify-token.js\");\n\n\n\n// Import the userland code.\n\n// Re-export the handler (should be the default export).\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(_pages_api_spotify_token_js__WEBPACK_IMPORTED_MODULE_3__, \"default\"));\n// Re-export config.\nconst config = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(_pages_api_spotify_token_js__WEBPACK_IMPORTED_MODULE_3__, \"config\");\n// Create and export the route module that will be consumed.\nconst routeModule = new next_dist_server_future_route_modules_pages_api_module_compiled__WEBPACK_IMPORTED_MODULE_0__.PagesAPIRouteModule({\n    definition: {\n        kind: next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__.RouteKind.PAGES_API,\n        page: \"/api/spotify-token\",\n        pathname: \"/api/spotify-token\",\n        // The following aren't used in production.\n        bundlePath: \"\",\n        filename: \"\"\n    },\n    userland: _pages_api_spotify_token_js__WEBPACK_IMPORTED_MODULE_3__\n});\n\n//# sourceMappingURL=pages-api.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2J1aWxkL3dlYnBhY2svbG9hZGVycy9uZXh0LXJvdXRlLWxvYWRlci9pbmRleC5qcz9raW5kPVBBR0VTX0FQSSZwYWdlPSUyRmFwaSUyRnNwb3RpZnktdG9rZW4mcHJlZmVycmVkUmVnaW9uPSZhYnNvbHV0ZVBhZ2VQYXRoPS4lMkZwYWdlcyU1Q2FwaSU1Q3Nwb3RpZnktdG9rZW4uanMmbWlkZGxld2FyZUNvbmZpZ0Jhc2U2ND1lMzAlM0QhIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O0FBQXNHO0FBQ3ZDO0FBQ0w7QUFDMUQ7QUFDMkQ7QUFDM0Q7QUFDQSxpRUFBZSx3RUFBSyxDQUFDLHdEQUFRLFlBQVksRUFBQztBQUMxQztBQUNPLGVBQWUsd0VBQUssQ0FBQyx3REFBUTtBQUNwQztBQUNPLHdCQUF3QixnSEFBbUI7QUFDbEQ7QUFDQSxjQUFjLHlFQUFTO0FBQ3ZCO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxLQUFLO0FBQ0wsWUFBWTtBQUNaLENBQUM7O0FBRUQiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zY2VuZXNvdW5kLz8xYjkxIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFBhZ2VzQVBJUm91dGVNb2R1bGUgfSBmcm9tIFwibmV4dC9kaXN0L3NlcnZlci9mdXR1cmUvcm91dGUtbW9kdWxlcy9wYWdlcy1hcGkvbW9kdWxlLmNvbXBpbGVkXCI7XG5pbXBvcnQgeyBSb3V0ZUtpbmQgfSBmcm9tIFwibmV4dC9kaXN0L3NlcnZlci9mdXR1cmUvcm91dGUta2luZFwiO1xuaW1wb3J0IHsgaG9pc3QgfSBmcm9tIFwibmV4dC9kaXN0L2J1aWxkL3RlbXBsYXRlcy9oZWxwZXJzXCI7XG4vLyBJbXBvcnQgdGhlIHVzZXJsYW5kIGNvZGUuXG5pbXBvcnQgKiBhcyB1c2VybGFuZCBmcm9tIFwiLi9wYWdlc1xcXFxhcGlcXFxcc3BvdGlmeS10b2tlbi5qc1wiO1xuLy8gUmUtZXhwb3J0IHRoZSBoYW5kbGVyIChzaG91bGQgYmUgdGhlIGRlZmF1bHQgZXhwb3J0KS5cbmV4cG9ydCBkZWZhdWx0IGhvaXN0KHVzZXJsYW5kLCBcImRlZmF1bHRcIik7XG4vLyBSZS1leHBvcnQgY29uZmlnLlxuZXhwb3J0IGNvbnN0IGNvbmZpZyA9IGhvaXN0KHVzZXJsYW5kLCBcImNvbmZpZ1wiKTtcbi8vIENyZWF0ZSBhbmQgZXhwb3J0IHRoZSByb3V0ZSBtb2R1bGUgdGhhdCB3aWxsIGJlIGNvbnN1bWVkLlxuZXhwb3J0IGNvbnN0IHJvdXRlTW9kdWxlID0gbmV3IFBhZ2VzQVBJUm91dGVNb2R1bGUoe1xuICAgIGRlZmluaXRpb246IHtcbiAgICAgICAga2luZDogUm91dGVLaW5kLlBBR0VTX0FQSSxcbiAgICAgICAgcGFnZTogXCIvYXBpL3Nwb3RpZnktdG9rZW5cIixcbiAgICAgICAgcGF0aG5hbWU6IFwiL2FwaS9zcG90aWZ5LXRva2VuXCIsXG4gICAgICAgIC8vIFRoZSBmb2xsb3dpbmcgYXJlbid0IHVzZWQgaW4gcHJvZHVjdGlvbi5cbiAgICAgICAgYnVuZGxlUGF0aDogXCJcIixcbiAgICAgICAgZmlsZW5hbWU6IFwiXCJcbiAgICB9LFxuICAgIHVzZXJsYW5kXG59KTtcblxuLy8jIHNvdXJjZU1hcHBpbmdVUkw9cGFnZXMtYXBpLmpzLm1hcCJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Fspotify-token&preferredRegion=&absolutePagePath=.%2Fpages%5Capi%5Cspotify-token.js&middlewareConfigBase64=e30%3D!\n");
+
+/***/ }),
+
+/***/ "(api)/./pages/api/spotify-token.js":
+/*!************************************!*\
+  !*** ./pages/api/spotify-token.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ handler)\n/* harmony export */ });\n/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! node-fetch */ \"node-fetch\");\n/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(node_fetch__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var buffer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! buffer */ \"buffer\");\n/* harmony import */ var buffer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(buffer__WEBPACK_IMPORTED_MODULE_1__);\n\n\nasync function handler(req, res) {\n    const client_id = process.env.SPOTIFY_CLIENT_ID;\n    const client_secret = process.env.SPOTIFY_CLIENT_SECRET;\n    if (!client_id || !client_secret) {\n        return res.status(500).json({\n            error: \"缺少 Spotify 认证信息\"\n        });\n    }\n    if (req.method !== \"GET\") {\n        return res.status(405).json({\n            error: \"Only GET requests allowed\"\n        });\n    }\n    // Add CORS headers\n    res.setHeader(\"Access-Control-Allow-Credentials\", true);\n    res.setHeader(\"Access-Control-Allow-Origin\", \"https://scene-sound.vercel.app\");\n    res.setHeader(\"Access-Control-Allow-Methods\", \"GET,OPTIONS\");\n    res.setHeader(\"Access-Control-Allow-Headers\", \"Content-Type, Authorization\");\n    if (req.method === \"OPTIONS\") {\n        return res.status(200).end();\n    }\n    try {\n        const response = await node_fetch__WEBPACK_IMPORTED_MODULE_0___default()(\"https://accounts.spotify.com/api/token\", {\n            method: \"POST\",\n            headers: {\n                \"Authorization\": `Basic ${buffer__WEBPACK_IMPORTED_MODULE_1__.Buffer.from(`${client_id}:${client_secret}`).toString(\"base64\")}`,\n                \"Content-Type\": \"application/x-www-form-urlencoded\"\n            },\n            body: \"grant_type=client_credentials\"\n        });\n        const data = await response.json();\n        if (data.error) {\n            throw new Error(data.error);\n        }\n        res.status(200).json({\n            access_token: data.access_token\n        });\n    } catch (error) {\n        console.error(\"获取 Spotify 令牌失败:\", error);\n        res.status(500).json({\n            error: \"获取 Spotify 令牌失败\"\n        });\n    }\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9wYWdlcy9hcGkvc3BvdGlmeS10b2tlbi5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUErQjtBQUNDO0FBRWpCLGVBQWVFLFFBQVFDLEdBQUcsRUFBRUMsR0FBRztJQUM1QyxNQUFNQyxZQUFZQyxRQUFRQyxHQUFHLENBQUNDLGlCQUFpQjtJQUMvQyxNQUFNQyxnQkFBZ0JILFFBQVFDLEdBQUcsQ0FBQ0cscUJBQXFCO0lBRXZELElBQUksQ0FBQ0wsYUFBYSxDQUFDSSxlQUFlO1FBQ2hDLE9BQU9MLElBQUlPLE1BQU0sQ0FBQyxLQUFLQyxJQUFJLENBQUM7WUFBRUMsT0FBTztRQUFrQjtJQUN6RDtJQUVBLElBQUlWLElBQUlXLE1BQU0sS0FBSyxPQUFPO1FBQ3hCLE9BQU9WLElBQUlPLE1BQU0sQ0FBQyxLQUFLQyxJQUFJLENBQUM7WUFBRUMsT0FBTztRQUE0QjtJQUNuRTtJQUVBLG1CQUFtQjtJQUNuQlQsSUFBSVcsU0FBUyxDQUFDLG9DQUFvQztJQUNsRFgsSUFBSVcsU0FBUyxDQUFDLCtCQUErQjtJQUM3Q1gsSUFBSVcsU0FBUyxDQUFDLGdDQUFnQztJQUM5Q1gsSUFBSVcsU0FBUyxDQUFDLGdDQUFnQztJQUU5QyxJQUFJWixJQUFJVyxNQUFNLEtBQUssV0FBVztRQUM1QixPQUFPVixJQUFJTyxNQUFNLENBQUMsS0FBS0ssR0FBRztJQUM1QjtJQUVBLElBQUk7UUFDRixNQUFNQyxXQUFXLE1BQU1qQixpREFBS0EsQ0FBQywwQ0FBMEM7WUFDckVjLFFBQVE7WUFDUkksU0FBUztnQkFDUCxpQkFBaUIsQ0FBQyxNQUFNLEVBQUVqQiwwQ0FBTUEsQ0FBQ2tCLElBQUksQ0FBQyxDQUFDLEVBQUVkLFVBQVUsQ0FBQyxFQUFFSSxjQUFjLENBQUMsRUFBRVcsUUFBUSxDQUFDLFVBQVUsQ0FBQztnQkFDM0YsZ0JBQWdCO1lBQ2xCO1lBQ0FDLE1BQU07UUFDUjtRQUVBLE1BQU1DLE9BQU8sTUFBTUwsU0FBU0wsSUFBSTtRQUVoQyxJQUFJVSxLQUFLVCxLQUFLLEVBQUU7WUFDZCxNQUFNLElBQUlVLE1BQU1ELEtBQUtULEtBQUs7UUFDNUI7UUFFQVQsSUFBSU8sTUFBTSxDQUFDLEtBQUtDLElBQUksQ0FBQztZQUFFWSxjQUFjRixLQUFLRSxZQUFZO1FBQUM7SUFDekQsRUFBRSxPQUFPWCxPQUFPO1FBQ2RZLFFBQVFaLEtBQUssQ0FBQyxvQkFBb0JBO1FBQ2xDVCxJQUFJTyxNQUFNLENBQUMsS0FBS0MsSUFBSSxDQUFDO1lBQUVDLE9BQU87UUFBa0I7SUFDbEQ7QUFDRiIsInNvdXJjZXMiOlsid2VicGFjazovL3NjZW5lc291bmQvLi9wYWdlcy9hcGkvc3BvdGlmeS10b2tlbi5qcz8yYjRjIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBmZXRjaCBmcm9tICdub2RlLWZldGNoJztcclxuaW1wb3J0IHsgQnVmZmVyIH0gZnJvbSAnYnVmZmVyJztcclxuXHJcbmV4cG9ydCBkZWZhdWx0IGFzeW5jIGZ1bmN0aW9uIGhhbmRsZXIocmVxLCByZXMpIHtcclxuICBjb25zdCBjbGllbnRfaWQgPSBwcm9jZXNzLmVudi5TUE9USUZZX0NMSUVOVF9JRDtcclxuICBjb25zdCBjbGllbnRfc2VjcmV0ID0gcHJvY2Vzcy5lbnYuU1BPVElGWV9DTElFTlRfU0VDUkVUO1xyXG5cclxuICBpZiAoIWNsaWVudF9pZCB8fCAhY2xpZW50X3NlY3JldCkge1xyXG4gICAgcmV0dXJuIHJlcy5zdGF0dXMoNTAwKS5qc29uKHsgZXJyb3I6ICfnvLrlsJEgU3BvdGlmeSDorqTor4Hkv6Hmga8nIH0pO1xyXG4gIH1cclxuXHJcbiAgaWYgKHJlcS5tZXRob2QgIT09ICdHRVQnKSB7XHJcbiAgICByZXR1cm4gcmVzLnN0YXR1cyg0MDUpLmpzb24oeyBlcnJvcjogJ09ubHkgR0VUIHJlcXVlc3RzIGFsbG93ZWQnIH0pO1xyXG4gIH1cclxuXHJcbiAgLy8gQWRkIENPUlMgaGVhZGVyc1xyXG4gIHJlcy5zZXRIZWFkZXIoJ0FjY2Vzcy1Db250cm9sLUFsbG93LUNyZWRlbnRpYWxzJywgdHJ1ZSk7XHJcbiAgcmVzLnNldEhlYWRlcignQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luJywgJ2h0dHBzOi8vc2NlbmUtc291bmQudmVyY2VsLmFwcCcpO1xyXG4gIHJlcy5zZXRIZWFkZXIoJ0FjY2Vzcy1Db250cm9sLUFsbG93LU1ldGhvZHMnLCAnR0VULE9QVElPTlMnKTtcclxuICByZXMuc2V0SGVhZGVyKCdBY2Nlc3MtQ29udHJvbC1BbGxvdy1IZWFkZXJzJywgJ0NvbnRlbnQtVHlwZSwgQXV0aG9yaXphdGlvbicpO1xyXG5cclxuICBpZiAocmVxLm1ldGhvZCA9PT0gJ09QVElPTlMnKSB7XHJcbiAgICByZXR1cm4gcmVzLnN0YXR1cygyMDApLmVuZCgpO1xyXG4gIH1cclxuXHJcbiAgdHJ5IHtcclxuICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goJ2h0dHBzOi8vYWNjb3VudHMuc3BvdGlmeS5jb20vYXBpL3Rva2VuJywge1xyXG4gICAgICBtZXRob2Q6ICdQT1NUJyxcclxuICAgICAgaGVhZGVyczoge1xyXG4gICAgICAgICdBdXRob3JpemF0aW9uJzogYEJhc2ljICR7QnVmZmVyLmZyb20oYCR7Y2xpZW50X2lkfToke2NsaWVudF9zZWNyZXR9YCkudG9TdHJpbmcoJ2Jhc2U2NCcpfWAsXHJcbiAgICAgICAgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQnLFxyXG4gICAgICB9LFxyXG4gICAgICBib2R5OiAnZ3JhbnRfdHlwZT1jbGllbnRfY3JlZGVudGlhbHMnXHJcbiAgICB9KTtcclxuXHJcbiAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuanNvbigpO1xyXG5cclxuICAgIGlmIChkYXRhLmVycm9yKSB7XHJcbiAgICAgIHRocm93IG5ldyBFcnJvcihkYXRhLmVycm9yKTtcclxuICAgIH1cclxuXHJcbiAgICByZXMuc3RhdHVzKDIwMCkuanNvbih7IGFjY2Vzc190b2tlbjogZGF0YS5hY2Nlc3NfdG9rZW4gfSk7XHJcbiAgfSBjYXRjaCAoZXJyb3IpIHtcclxuICAgIGNvbnNvbGUuZXJyb3IoJ+iOt+WPliBTcG90aWZ5IOS7pOeJjOWksei0pTonLCBlcnJvcik7XHJcbiAgICByZXMuc3RhdHVzKDUwMCkuanNvbih7IGVycm9yOiAn6I635Y+WIFNwb3RpZnkg5Luk54mM5aSx6LSlJyB9KTtcclxuICB9XHJcbn0gIl0sIm5hbWVzIjpbImZldGNoIiwiQnVmZmVyIiwiaGFuZGxlciIsInJlcSIsInJlcyIsImNsaWVudF9pZCIsInByb2Nlc3MiLCJlbnYiLCJTUE9USUZZX0NMSUVOVF9JRCIsImNsaWVudF9zZWNyZXQiLCJTUE9USUZZX0NMSUVOVF9TRUNSRVQiLCJzdGF0dXMiLCJqc29uIiwiZXJyb3IiLCJtZXRob2QiLCJzZXRIZWFkZXIiLCJlbmQiLCJyZXNwb25zZSIsImhlYWRlcnMiLCJmcm9tIiwidG9TdHJpbmciLCJib2R5IiwiZGF0YSIsIkVycm9yIiwiYWNjZXNzX3Rva2VuIiwiY29uc29sZSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./pages/api/spotify-token.js\n");
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../../webpack-api-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next"], () => (__webpack_exec__("(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Fspotify-token&preferredRegion=&absolutePagePath=.%2Fpages%5Capi%5Cspotify-token.js&middlewareConfigBase64=e30%3D!")));
+module.exports = __webpack_exports__;
+
+})();

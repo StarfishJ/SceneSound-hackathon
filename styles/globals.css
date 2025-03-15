@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: transparent;
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  background: transparent;
+}
+
+/* 新的背景动画效果 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  --c: 7px;
+  background-color: rgba(0, 0, 0, 0.9);
+  background-image: radial-gradient(
+      circle at 50% 50%,
+      #0000 1.5px,
+      #000 0 var(--c),
+      #0000 var(--c)
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      #0000 1.5px,
+      #000 0 var(--c),
+      #0000 var(--c)
+    ),
+    radial-gradient(circle at 50% 50%, #f00, #f000 60%),
+    radial-gradient(circle at 50% 50%, #ff0, #ff00 60%),
+    radial-gradient(circle at 50% 50%, #0f0, #0f00 60%),
+    radial-gradient(ellipse at 50% 50%, #00f, #00f0 60%);
+  background-size:
+    12px 20.7846097px,
+    12px 20.7846097px,
+    200% 200%,
+    200% 200%,
+    200% 200%,
+    200% 20.7846097px;
+  --p: 0px 0px, 6px 10.39230485px;
+  background-position:
+    var(--p),
+    0% 0%,
+    0% 0%,
+    0% 0px;
+  animation:
+    wee 20s linear infinite,
+    filt 4s linear infinite;
+  z-index: -999;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+@keyframes filt {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes wee {
+  0% {
+    background-position:
+      var(--p),
+      800% 400%,
+      1000% -400%,
+      -1200% -600%,
+      400% 41.5692194px;
+  }
+  to {
+    background-position:
+      var(--p),
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%;
+  }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(14, 165, 233, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(14, 165, 233, 0.7);
+}
+
+/* Selection styles */
+::selection {
+  background: rgba(14, 165, 233, 0.3);
+  color: #fff;
+}
+
+/* Focus styles */
+:focus {
+  outline: 2px solid rgba(14, 165, 233, 0.5);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Custom styles */
+.rhap_container {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.rhap_main-controls-button {
+  color: #0ea5e9 !important;
+}
+
+.rhap_progress-filled {
+  background-color: #0ea5e9 !important;
+}
+
+.rhap_progress-indicator {
+  background: #0ea5e9 !important;
+} 
