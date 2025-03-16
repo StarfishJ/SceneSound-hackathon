@@ -42,12 +42,9 @@ cd SceneSound-hackathon
 ```
 
 2. Download required large files:
-   - Places365 model (required):
-     - Download the model file from [Google Drive](https://drive.google.com/file/d/1yNx-EQYbZJnNVh8-wF0dIjDxXZOYDxGE/view?usp=sharing)
-     - Place it in `python_service/resnet50_places365.pth.tar`
    - Spotify tracks database (optional):
      - Will be automatically generated on first run
-     - Or download pre-built database from [Google Drive](https://drive.google.com/file/d/1yNx-EQYbZJnNVh8-wF0dIjDxXZOYDxGE/view?usp=sharing)
+     - Or download pre-built database from [Google Drive]https://drive.google.com/file/d/1M0bb7IcOW-U4XdrpgtqF7bg7VmPNrhkc/view?usp=drive_link
      - Place it in `public/downloads/spotify/tracks.json`
 
 3. Install frontend dependencies:
@@ -65,15 +62,6 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu  
 
 # Then install other dependencies
 pip install flask flask-cors pillow python-dotenv requests
-# Or use requirements.txt if available
-pip install -r requirements.txt
-```
-
-5. Set up environment variables:
-Create a `.env` file in the root directory with the following variables:
-```env
-SPOTIFY_CLIENT_ID=your_spotify_client_id
-SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
 ```
 
 ### Running the Application
