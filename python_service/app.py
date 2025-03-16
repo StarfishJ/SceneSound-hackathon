@@ -605,16 +605,16 @@ def after_request(response):
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
-    logger.info("收到分析请求")
-    logger.debug(f"请求头: {dict(request.headers)}")
-    logger.debug(f"文件: {request.files}")
-    logger.debug(f"表单数据: {request.form}")
+    logger.info("received analyze request")
+    logger.debug(f"request headers: {dict(request.headers)}")
+    logger.debug(f"file: {request.files}")
+    logger.debug(f"form data: {request.form}")
     
     try:
         if 'image' not in request.files and 'text' not in request.form:
-            logger.error("请求中没有图片或文本")
+            logger.error("no image or text in request")
             return jsonify({
-                'error': '请提供图片或文本描述',
+                'error': 'please provide an image or text description',
                 'success': False
             }), 400
 
@@ -623,30 +623,30 @@ def analyze():
         if 'image' in request.files:
             image_file = request.files['image']
             if not image_file.filename:
-                logger.error("图片文件名为空")
+                logger.error("image file name is empty")
                 return jsonify({
-                    'error': '无效的图片文件',
+                    'error': 'invalid image file',
                     'success': False
                 }), 400
 
             try:
-                logger.info(f"开始处理图片: {image_file.filename}")
+                logger.info(f"processing image: {image_file.filename}")
                 image = process_image(image_file)
-                logger.info(f"图片处理成功: {image.size}")
+                logger.info(f"image processed: {image.size}")
                 
                 # Analyze image
-                logger.info("开始场景分析...")
+                logger.info("starting scene analysis...")
                 scenes = model.predict(image)
-                logger.info(f"场景分析完成: {scenes}")
+                logger.info(f"scene analysis completed: {scenes}")
                 
                 # Add source marker
                 for scene in scenes:
                     scene['source'] = 'image'
                 
             except Exception as e:
-                logger.error(f"图片处理或分析失败: {str(e)}", exc_info=True)
+                logger.error(f"image processing or analysis failed: {str(e)}", exc_info=True)
                 return jsonify({
-                    'error': f'图片处理失败: {str(e)}',
+                    'error': f'image processing failed: {str(e)}',
                     'success': False
                 }), 400
 
@@ -672,115 +672,98 @@ def analyze():
 
         # Get music recommendation
         try:
-            logger.info(f"尝试读取音乐数据文件: {TRACKS_FILE}")
+            seen_track_uris = set()
+            logger.info(f"attempting to read music data file: {TRACKS_FILE}")
             if not os.path.exists(TRACKS_FILE):
-                logger.error(f"音乐数据文件不存在: {TRACKS_FILE}")
-        return jsonify({
-                    'error': '音乐数据文件不存在',
-            'success': False
-        }), 500
-
+                logger.error(f"music data file does not exist: {TRACKS_FILE}")
+                return jsonify({
+                    'error': 'music data file does not exist',
+                    'success': False
+                }), 500
+            
             with open(TRACKS_FILE, 'r', encoding='utf-8') as f:
                 try:
                     data = json.load(f)
                 except json.JSONDecodeError as e:
-                    logger.error(f"音乐数据文件格式错误: {str(e)}")
-    return jsonify({
-                        'error': '音乐数据文件格式错误',
+                    logger.error(f"music data file format error: {str(e)}")
+                    return jsonify({
+                        'error': 'music data file format error',
                         'success': False
                     }), 500
                     
                 playlists = data.get('playlists', [])
                 if not playlists:
-                    logger.warning("音乐数据文件中没有播放列表数据")
+                    logger.warning("music data file has no playlists")
                     return jsonify({
-                        'error': '没有可用的音乐数据',
+                        'error': 'no available music data',
                         'success': False
                     }), 500
                 
-                # Collect all songs
+                # collect all tracks
                 all_tracks = []
                 for playlist in playlists:
                     tracks = playlist.get('tracks', [])
                     all_tracks.extend(tracks)
                 
-                logger.info(f"Retrieved music data: {len(all_tracks)} songs")
+                logger.info(f"loaded {len(all_tracks)} tracks")
                 
-                # Use scene keywords to search for song names
-                matched_tracks = []
-                seen_track_uris = set()  # 用于追踪已添加的歌曲
+                # extract tags from scenes
+                input_tags = []
+                for scene in scenes:
+                    scene_tags = scene['scene'].lower().split()
+                    input_tags.extend(scene_tags)
                 
+                logger.info(f"input tags: {input_tags}")
+                
+                # calculate match score for each track
+                scored_tracks = []
                 for track in all_tracks:
                     if isinstance(track, str):
                         continue
                     
-                    track_uri = track.get('track_uri', '')
+                    track_uri = track.get('track_uri')
                     if not track_uri or track_uri in seen_track_uris:
                         continue
                         
-                    track_name = track.get('track_name', '').lower()
-                    for scene in scenes:
-                        scene_name = scene['scene'].lower()
-                        if scene_name in track_name:
-                            matched_tracks.append(track)
-                            seen_track_uris.add(track_uri)
-                            break
-                
-                logger.info(f"匹配到 {len(matched_tracks)} 首不重复的歌曲")
-                
-                # 如果匹配的歌曲不足12首，随机补充
-                if len(matched_tracks) < 12:
-                    remaining_tracks = [
-                        t for t in all_tracks 
-                        if isinstance(t, dict) 
-                        and t.get('track_uri') 
-                        and t.get('track_uri') not in seen_track_uris
-                    ]
+                    track_tags = track.get('tags', [])
+                    logger.info(f"\nchecking track: {track.get('track_name', 'Unknown')}")
+                    logger.info(f"track tags: {track_tags}")
                     
-                    if remaining_tracks:
-                        needed_tracks = min(12 - len(matched_tracks), len(remaining_tracks))
-                        additional_tracks = random.sample(remaining_tracks, needed_tracks)
-                        for track in additional_tracks:
-                            track_uri = track.get('track_uri')
-                            if track_uri:
-                                matched_tracks.append(track)
-                                seen_track_uris.add(track_uri)
+                    # calculate match count
+                    matched_tags = [tag for tag in track_tags if tag.lower() in input_tags]
+                    match_count = len(matched_tags)
+                    
+                    if match_count > 0:  # only add tracks with matches
+                        scored_tracks.append({
+                            **track,
+                            'match_count': match_count,
+                            'matched_tags': matched_tags
+                        })
+                        seen_track_uris.add(track_uri)  # record added tracks
                 
-                # 如果匹配的歌曲超过12首，随机选择12首
-                if len(matched_tracks) > 12:
-                    matched_tracks = random.sample(matched_tracks, 12)
-                    # 更新已见过的 track_uri 集合
-                    seen_track_uris = {t.get('track_uri') for t in matched_tracks}
+                # sort by match count
+                matched_tracks = sorted(scored_tracks, 
+                                     key=lambda x: x['match_count'], 
+                                     reverse=True)[:12]
                 
-                logger.info(f"最终选择了 {len(matched_tracks)} 首不重复的歌曲")
+                logger.info(f"selected {len(matched_tracks)} tracks with highest match count")
                 
-                # Format song information
+                # format track info
                 playlist = []
                 for track in matched_tracks:
                     try:
                         track_uri = track.get('track_uri', '')
                         track_id = track_uri.split(':')[-1] if track_uri else ''
                         
-                        # 获取歌曲详细信息
+                        # get track info
                         track_info = None
                         if track_id:
                             track_info = spotify_client.get_track_info(track_id)
-                            logger.debug(f"获取到的歌曲信息: {track_info}")
                         
-                        # 使用获取到的信息或默认值
                         album_image_url = (track_info.get('album_image_url') 
-                                         if track_info and track_info.get('album_image_url') 
-                                         else '/default-album.png')
+                                        if track_info and track_info.get('album_image_url') 
+                                        else '/default-album.png')
                         preview_url = track_info.get('preview_url') if track_info else None
-                        
-                        if not preview_url:
-                            logger.warning(f"歌曲 {track.get('track_name')} 没有预览 URL")
-                        
-                        logger.debug(
-                            f"歌曲信息 - 名称: {track.get('track_name')}, "
-                            f"专辑封面: {album_image_url}, "
-                            f"预览 URL: {preview_url}"
-                        )
                         
                         playlist.append({
                             'id': track_uri,
@@ -791,14 +774,17 @@ def analyze():
                             'pos': len(playlist),
                             'albumImageUrl': album_image_url,
                             'spotifyUrl': f"https://open.spotify.com/track/{track_id}" if track_id else None,
-                            'previewUrl': preview_url
+                            'previewUrl': preview_url,
+                            'matchCount': track['match_count'],
+                            'matchedTags': track['matched_tags']
                         })
                         
-                        logger.debug(f"Added track to playlist: {track.get('track_name')} with album image: {album_image_url}")
-            except Exception as e:
-                        logger.error(f"Error processing single song: {str(e)}")
-                continue
-        
+
+                        logger.info(f"added track to playlist: {track.get('track_name')} (matched tags: {track['matched_tags']})")
+                        
+                    except Exception as e:
+                        logger.error(f"error processing single track: {str(e)}")
+                        continue
             logger.info(f"Final selected {len(playlist)} recommended songs")
         except Exception as e:
             logger.error(f"Music recommendation failed: {str(e)}")
