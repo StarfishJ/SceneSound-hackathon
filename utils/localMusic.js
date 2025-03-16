@@ -28,9 +28,16 @@ export async function getLocalMusicRecommendations(styles) {
     
     console.log('Filtered English songs:', englishTracks.length);
     
-    // Randomize and limit quantity to 6
-    const shuffled = englishTracks.sort(() => Math.random() - 0.5);
-    const selectedTracks = shuffled.slice(0, 6);
+    // Compute match count based on tags
+    const scoredTracks = englishTracks.map(track => {
+      const matchCount = track.tags 
+        ? track.tags.filter(tag => styles.includes(tag.toLowerCase())).length 
+        : 0;
+      return { ...track, matchCount };
+    });
+
+    // Sort by match count in descending order and take the top 12
+    const sortedTracks = scoredTracks.sort((a, b) => b.matchCount - a.matchCount).slice(0, 12);
     
     console.log('Selected music:', selectedTracks.length, 'songs');
     
