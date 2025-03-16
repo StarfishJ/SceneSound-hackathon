@@ -729,19 +729,19 @@ def analyze():
                     logger.info(f"\nchecking track: {track.get('track_name', 'Unknown')}")
                     logger.info(f"track tags: {track_tags}")
                     
-                    # 计算匹配数
+                    # calculate match count
                     matched_tags = [tag for tag in track_tags if tag.lower() in input_tags]
                     match_count = len(matched_tags)
                     
-                    if match_count > 0:  # 只添加有匹配的歌曲
+                    if match_count > 0:  # only add tracks with matches
                         scored_tracks.append({
                             **track,
                             'match_count': match_count,
                             'matched_tags': matched_tags
                         })
-                        seen_track_uris.add(track_uri)  # 记录已添加的歌曲
+                        seen_track_uris.add(track_uri)  # record added tracks
                 
-                # 按匹配数排序
+                # sort by match count
                 matched_tracks = sorted(scored_tracks, 
                                      key=lambda x: x['match_count'], 
                                      reverse=True)[:12]
