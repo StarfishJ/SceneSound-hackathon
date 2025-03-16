@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['i.scdn.co', 'mosaic.scdn.co'],
+    unoptimized: true
   },
   // Configure CORS
   async headers() {

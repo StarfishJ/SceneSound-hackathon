@@ -665,10 +665,10 @@ def analyze():
 
         if not scenes:
             logger.warning("No scenes generated")
-            return jsonify({
+        return jsonify({
                 'error': 'Unable to recognize scene',
-                'success': False
-            }), 400
+            'success': False
+        }), 400
 
         # Get music recommendation
         try:
@@ -779,12 +779,12 @@ def analyze():
                             'matchedTags': track['matched_tags']
                         })
                         
+
                         logger.info(f"added track to playlist: {track.get('track_name')} (matched tags: {track['matched_tags']})")
                         
                     except Exception as e:
                         logger.error(f"error processing single track: {str(e)}")
                         continue
-            
             logger.info(f"Final selected {len(playlist)} recommended songs")
         except Exception as e:
             logger.error(f"Music recommendation failed: {str(e)}")
@@ -800,7 +800,7 @@ def analyze():
         }
         logger.info(f"Returning response: {response_data}")
         return jsonify(response_data)
-
+        
     except Exception as e:
         logger.error(f"Error processing request: {str(e)}", exc_info=True)
         return jsonify({
