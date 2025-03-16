@@ -79,7 +79,7 @@ export default function UploadSection({ onUpload, isLoading }) {
 
       <div className="w-full">
         <label htmlFor="text-input" className="block text-sm font-medium text-gray-700 mb-2">
-          Or enter text to describe a scene
+          Please describe your current mood or scene in a few words (e.g., 'a rainy afternoon with coffee').
         </label>
         <input
           id="text-input"
