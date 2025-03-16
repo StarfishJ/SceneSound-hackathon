@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from '../styles/SceneAnalyzer.module.css';
 import PlaylistSection from './PlaylistSection';
 
@@ -258,7 +258,7 @@ export default function SceneAnalyzer() {
             selectedAlbums.add(albumName);
             
             // If enough songs have been collected, stop
-            if (uniqueTracks.length >= 6) {
+            if (uniqueTracks.length >= 12) { // limit to 12 songs
                 break;
             }
         }
