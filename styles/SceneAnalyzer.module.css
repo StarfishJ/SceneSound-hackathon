@@ -94,7 +94,7 @@
   font-size: 2.5rem;
   text-align: center;
   margin: 0;
-  padding: 1.5rem 0;
+  padding: 0.5rem 0;
   font-weight: 800;
   background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
   -webkit-background-clip: text;
@@ -113,16 +113,16 @@
   flex-direction: row;
   gap: 2rem;
   width: 100%;
-  height: calc(100vh - 120px);
-  margin: 100px 0 0 0;
+  height: calc(100vh - 160px);
+  margin: 70px 0 20px 0;
   padding: 0 2rem;
   overflow: hidden;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .mainContent.hasContent {
   justify-content: flex-start;
-  align-items: flex-start;
-  min-height: auto;
 }
 
 @media (max-width: 1024px) {
@@ -130,31 +130,40 @@
     flex-direction: column;
     align-items: center;
     margin-top: 6rem;
-    min-height: calc(100vh - 10rem);
+    margin-bottom: 2rem;
+    height: auto;
+    min-height: calc(100vh - 8rem);
   }
   
   .mainContent.hasContent {
     align-items: stretch;
-    min-height: auto;
   }
   
   .uploadSection {
     flex: none;
     width: 100%;
     max-width: 400px;
+    height: auto;
+    min-height: 500px;
+    max-height: calc(100vh - 250px);
     position: relative;
     margin: 0 auto;
   }
   
   .rightSection {
     width: 100%;
+    height: auto;
+    min-height: 500px;
+    max-height: calc(100vh - 250px);
+    margin-top: 2rem;
   }
 }
 
 .uploadSection {
   flex: 0 0 400px;
-  height: 100%;
-  margin: 0;
+  width: 400px;
+  height: calc(100vh - 180px);
+  margin-top: 1rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
   padding: 1.5rem;
@@ -167,6 +176,7 @@
 
 .mainContent.hasContent .uploadSection {
   transform: translateX(0);
+  height: calc(100vh - 180px);
 }
 
 .uploadSection:hover {
@@ -306,8 +316,10 @@
 }
 
 .rightSection {
-  flex: 1;
-  height: 100%;
+  flex: 0;
+  width: 0;
+  height: calc(100vh - 180px);
+  margin-top: 1rem;
   visibility: hidden;
   opacity: 0;
   display: flex;
@@ -316,23 +328,30 @@
   transform: translateX(20px);
   transition: all 0.5s ease-in-out;
   overflow-y: auto;
-  padding-right: 1rem;
+  padding-right: 0;
+  padding-bottom: 4rem;
 }
 
 .rightSection.visible {
+  flex: 1;
+  width: auto;
   visibility: visible;
   opacity: 1;
   transform: translateX(0);
+  padding-right: 1rem;
 }
 
 .musicSection {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 3rem 1.5rem;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   flex: 1;
+  min-height: min-content;
+  overflow-y: visible;
+  margin-bottom: 2rem;
 }
 
 .sectionTitle {
@@ -347,7 +366,8 @@
 .trackList {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 .trackItem {
@@ -726,4 +746,31 @@
 
 .trackItem:hover {
   background: rgba(255, 255, 255, 0.05);
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+  z-index: 2;
+}
+
+.logo {
+  width: 7.2rem;
+  height: 7.2rem;
+  object-fit: contain;
+  animation: wobble 2s ease-in-out infinite;
+}
+
+@keyframes wobble {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(5px) rotate(2deg);
+  }
 } 

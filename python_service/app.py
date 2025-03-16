@@ -665,27 +665,27 @@ def analyze():
 
         if not scenes:
             logger.warning("No scenes generated")
-            return jsonify({
+        return jsonify({
                 'error': 'Unable to recognize scene',
-                'success': False
-            }), 400
+            'success': False
+        }), 400
 
         # Get music recommendation
         try:
             logger.info(f"尝试读取音乐数据文件: {TRACKS_FILE}")
             if not os.path.exists(TRACKS_FILE):
                 logger.error(f"音乐数据文件不存在: {TRACKS_FILE}")
-                return jsonify({
+        return jsonify({
                     'error': '音乐数据文件不存在',
-                    'success': False
-                }), 500
-            
+            'success': False
+        }), 500
+
             with open(TRACKS_FILE, 'r', encoding='utf-8') as f:
                 try:
                     data = json.load(f)
                 except json.JSONDecodeError as e:
                     logger.error(f"音乐数据文件格式错误: {str(e)}")
-                    return jsonify({
+    return jsonify({
                         'error': '音乐数据文件格式错误',
                         'success': False
                     }), 500
@@ -795,10 +795,10 @@ def analyze():
                         })
                         
                         logger.debug(f"Added track to playlist: {track.get('track_name')} with album image: {album_image_url}")
-                    except Exception as e:
+            except Exception as e:
                         logger.error(f"Error processing single song: {str(e)}")
-                        continue
-            
+                continue
+        
             logger.info(f"Final selected {len(playlist)} recommended songs")
         except Exception as e:
             logger.error(f"Music recommendation failed: {str(e)}")
@@ -814,7 +814,7 @@ def analyze():
         }
         logger.info(f"Returning response: {response_data}")
         return jsonify(response_data)
-
+        
     except Exception as e:
         logger.error(f"Error processing request: {str(e)}", exc_info=True)
         return jsonify({

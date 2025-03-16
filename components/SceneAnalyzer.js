@@ -447,6 +447,13 @@ export default function SceneAnalyzer() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.logoContainer}>
+        <img
+          src="/downloads/logo.PNG"
+          alt="SceneSound Logo"
+          className={styles.logo}
+        />
+      </div>
       <div className={styles.rippleContainer}>
         {ripples.map(ripple => (
           <div key={ripple.id} className={styles.ripple} style={ripple.style} />
@@ -455,7 +462,7 @@ export default function SceneAnalyzer() {
       <div className={styles.content}>
         <h1 className={styles.title}>SceneSound</h1>
         
-        <div className={`${styles.mainContent} ${(imagePreview || textInput.trim()) ? styles.hasContent : ''} w-full max-w-6xl mx-auto px-4`}>
+        <div className={`${styles.mainContent} ${showResults ? styles.hasContent : ''} w-full max-w-6xl mx-auto px-4`}>
           <div className={styles.uploadSection}>
             <div className={styles.imageUpload}>
               {imagePreview ? (
