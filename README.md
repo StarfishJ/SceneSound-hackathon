@@ -22,8 +22,8 @@ SceneSound is an innovative web application that generates personalized music pl
 - **Backend**:
   - Python
   - Flask
-  - PyTorch (Places365 model)
-  - Spotify Web API
+  - PyTorch (Places365 model) 
+  - Spotify Web API   (if the device is running offline, the program can run without API, API is only used to show thumbnail pictures)
 
 ## Getting Started
 
