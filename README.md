@@ -116,7 +116,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Large Files
 Due to GitHub's file size limitations, the following files are not included in the repository:
-- `python_service/resnet50_places365.pth.tar` (92.76 MB)
-- `public/downloads/spotify/tracks.json` (135.48 MB)
+- `python_service/resnet18_places365.pth.tar` (43 MB)  https://drive.google.com/file/d/1FKdqNhoJmvkVx5tN7pj7bp9MYXuQpH48/view?usp=sharing
+- `public/downloads/spotify/tracks.json` (170 MB)   https://drive.google.com/file/d/1M0bb7IcOW-U4XdrpgtqF7bg7VmPNrhkc/view?usp=sharing
 
 Please download these files from the provided Google Drive links in the installation instructions.
